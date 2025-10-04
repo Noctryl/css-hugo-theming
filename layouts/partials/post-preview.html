@@ -1,17 +1,30 @@
 <div class="blog-post">
   <div class="matter">
-    {{ if .Params.thumbnail }}
-    <img class="thumbnail-img" src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+
+    {{ if or .Params.thumbnail .Params.image }}
+      <a href="{{ .RelPermalink }}">
+        <img class="thumbnail-img"
+             src="{{ if .Params.thumbnail }}{{ .Params.thumbnail }}{{ else }}{{ .Params.image }}{{ end }}"
+             alt="{{ .Title }}">
+      </a>
     {{ end }}
+
     <div class="post-details">
       <h3 class="title">
-        <a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
+        <a href="{{ .RelPermalink }}">
+          {{ .Title }}
+          {{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}
+        </a>
       </h3>
+
       <p class="summary">
         <span>{{ .Description }}</span>
       </p>
+
       <div class="list-meta">
-        <span class="rest date-singles">{{ .Date.Format (default "2 Jan 2006" $.Site.Params.dateFormat) }}</span>
+        <span class="rest date-singles">
+          {{ .Date.Format (default "2 Jan 2006" $.Site.Params.dateFormat) }}
+        </span>
         ,
         <span class="readtime">
           {{ .ReadingTime }} min
