@@ -5,6 +5,8 @@
 <body>
   <div class="container wrapper">
     {{ partial "head.html" . }}
+    
+    <!-- Featured Section -->
     <div class="recent-posts section">
       <h2 class="section-headers">Featured</h2>
       {{ $mostRecent := first 1 (.Site.RegularPages.ByDate.Reverse) }}
@@ -13,57 +15,60 @@
         {{ partial "post-preview.html" . }}
       </div>
       {{ end }}
-      <!-- Featured Section -->
+      
       {{ $featured := where .Site.RegularPages ".Params.featured" 1 }}
       <div class="posts featured">
         {{ range $featured }}
-        <div class="">
+        <div>
           {{ partial "post-preview.html" . }}
         </div>
         {{ end }}
       </div>
     </div>
 
-    <div>
-      <div class="section">
-        <h2 class="section-headers">Posts</h2>
-        <div class="posts">
-          {{ $posts := where .Site.RegularPages "Section" "posts" }}
-          {{ range $posts }}
-          <div class="">
-            {{ partial "post-preview.html" . }}
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-
-    <!-- Essays Section -->
+    <!-- Posts Section -->
     <div class="section">
-      <h2 class="section-headers">Essays</h2>
-      <div class="posts essays">
-        {{ $essays := where .Site.RegularPages "Section" "essays" }}
-        {{ range $essays }}
-        {{ partial "post-preview.html" . }}
+      <h2 class="section-headers">Posts</h2>
+      <div class="posts">
+        {{ $posts := where .Site.RegularPages "Section" "posts" }}
+        {{ range $posts }}
+        <div>
+          {{ partial "post-preview.html" . }}
+        </div>
         {{ end }}
       </div>
     </div>
 
-    <!-- Poems Section -->
-    <div class="section poems">
-      <h2 class="section-headers">Poems</h2>
-      <div class="posts">
-        {{ $poems := where .Site.RegularPages "Section" "poems" }}
-        {{ range $poems }}
+<!-- Rants Section -->
+<div class="section rants">
+  <h2 class="section-headers">Rants</h2>
+  <div class="posts">
+    {{ with .Site.GetPage "Section" "rants" }}
+      {{ range .Pages }}
         {{ partial "post-preview.html" . }}
+      {{ end }}
+    {{ else }}
+      <p>No rants found.</p>
+    {{ end }}
+  </div>
+</div>
+
+
+
+    <!-- Thoughts Section -->
+    <div class="section thoughts">
+      <h2 class="section-headers">Thoughts</h2>
+      <div class="posts">
+        {{ $thoughts := where .Site.RegularPages "Section" "thoughts" }}
+        {{ range $thoughts }}
+        <div>
+          {{ partial "post-preview.html" . }}
+        </div>
         {{ end }}
       </div>
     </div>
-  </div>
-  </div>
-  </div>
+
   </div>
   {{ partial "footer.html" . }}
 </body>
-
 </html>
