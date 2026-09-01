@@ -783,3 +783,11 @@ em {
 * em {
     display: inline !important;
 }
+
+/* Masthead: use the same Chomsky blackletter as the reference title page. */
+.header .site-title,
+.site-title {
+  font-family: "Chomsky", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
