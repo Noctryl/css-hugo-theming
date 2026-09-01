@@ -9,15 +9,9 @@
           <div class="blog-matter">
             <div class="details">
               <h1 class="title">{{ .Title }}</h1>
-              <span class="description">
-                {{ if isset .Params "description" }}
-                  {{ .Description }}
-                {{ else if gt (countrunes (.Content | plainify)) 300 }}
-                  {{ slicestr (.Content) 0 300 | safeHTML }}...
-                {{ else }}
-                  {{ .Content | plainify | safeHTML }}
-                {{ end }}
-              </span>
+              {{ with .Description }}
+                <span class="description">{{ . }}</span>
+              {{ end }}
             </div>
             {{ if ne .Date.Year 1 }}
           </div>
