@@ -1,54 +1,3 @@
-:root {
-    color-scheme: light;
-    --paper: #f5f2e8;
-    --ink: #333;
-    --ink-strong: #111;
-    --muted: #777;
-    --border: #ccc;
-    --border-soft: #eee;
-    --surface: #e8ebf5;
-    --surface-soft: #f9f2f4;
-    --table-border: #dee2e6;
-    --table-head: #212529;
-    --table-head-border: #32383e;
-    --quote: #ffb7d6;
-    --selection-bg: #111;
-    --selection-fg: #fff;
-    --code-bg: #272822;
-    --footer-border: #f4f4f4;
-    --image-opacity: 1;
-}
-
-html.dark {
-    color-scheme: dark;
-    --paper: #1c1b18;
-    --ink: #ddd6c7;
-    --ink-strong: #f0eadc;
-    --muted: #a39d91;
-    --border: #5b574f;
-    --border-soft: #403d37;
-    --surface: #292823;
-    --surface-soft: #302b2d;
-    --table-border: #514d45;
-    --table-head: #302e29;
-    --table-head-border: #5b574f;
-    --quote: #c79caf;
-    --selection-bg: #e8e0d1;
-    --selection-fg: #1c1b18;
-    --code-bg: #23221f;
-    --footer-border: #403d37;
-    --image-opacity: .88;
-}
-
-html {
-    background-color: var(--paper);
-    transition: background-color .25s ease, color .25s ease;
-}
-
-body {
-    transition: background-color .25s ease, color .25s ease;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
@@ -57,11 +6,10 @@ body {
 body {
     font-family: "EB Garamond", "Noto Sans Devnagari", sans-serif !important;
     font-weight: 400;
-    color: var(--ink);
+    color: #333;
     line-height: 1.8em;
     font-size: 17px;
-    background-color: var(--paper);
-    background-image: url(https://frappe.io/files/npaper.png);
+    background: url(https://frappe.io/files/npaper.png);
     background-repeat: repeat-y;
     /* background-color: #F5F2E8; */
     margin: 0;
@@ -73,11 +21,11 @@ body {
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
-  filter: grayscale(100%) opacity(var(--image-opacity));
+  filter: grayscale(100%);
 }
 
 a {
-    color: var(--ink-strong);
+    color: black;
     text-decoration: none;
     word-break: break-word;
 }
@@ -91,26 +39,26 @@ button,
 input,
 select,
 textarea {
-    color: var(--ink);
+    color: #333;
 }
 
 ::-moz-selection {
     text-shadow: none;
-    color: var(--selection-fg);
+    color: #fff;
     text-decoration: underline;
 }
 
 ::selection {
     background: black;
     text-shadow: none;
-    color: var(--selection-fg);
+    color: #fff;
 }
 
 hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid #ccc;
     margin: 1rem 0;
     padding: 0;
 }
@@ -147,13 +95,13 @@ table {
 
 table th,
 table td {
-    border-bottom: 1px solid var(--table-border);
+    border-bottom: 1px solid #dee2e6;
     padding: 0.75rem;
     vertical-align: top;
 }
 
 table thead th {
-    border-bottom: 2px solid var(--table-border);
+    border-bottom: 2px solid #dee2e6;
     vertical-align: bottom;
 }
 
@@ -166,9 +114,9 @@ table tbody tr:nth-of-type(even) {
 }
 
 table th {
-    background-color: var(--table-head);
-    border-color: var(--table-head-border);
-    color: var(--selection-fg);
+    background-color: #212529;
+    border-color: #32383e;
+    color: #fff;
 }
 
 textarea {
@@ -186,7 +134,7 @@ blockquote {
     font-size: 1.2rem;
     font-family: Georgia, bitstream charter, serif;
     border-left: 3px solid;
-    border-color: var(--quote);
+    border-color: #FFB7D6;
     padding-left: 20px;
 }
 
@@ -206,7 +154,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--ink);
+    color: #333;
     font-weight: 500;
     line-height: 1.3em;
     margin: 30px 0 20px 0;
@@ -304,7 +252,7 @@ li {
 }
 
 .thumbnail-img {
-    filter: grayscale(100%) opacity(var(--image-opacity)) !important;
+    filter: grayscale(100%) !important;
 }
 
 .highlight pre {
@@ -374,7 +322,7 @@ em {
 }
 
 .header nav {
-    border-top: 1px solid var(--border-soft);
+    border-top: 1px solid #eee;
     padding-top: 15px;
     display: flex;
     justify-content: space-between
@@ -393,11 +341,11 @@ em {
 }
 
 .header nav.social a {
-    color: var(--ink);
+    color: #333;
 }
 
 .header nav.social a:hover {
-    color: var(--ink-strong);
+    color: black;
 }
 
 .header .site-description nav {
@@ -421,20 +369,20 @@ em {
 }
 
 .header .site-description .scheme-toggle a.dark svg {
-    fill: var(--ink-strong);
-    color: var(--ink-strong);
+    fill: #f8e04f;
+    color: #f8e04f;
 }
 
 .header .site-description .scheme-toggle a.light svg {
-    fill: var(--muted);
-    color: var(--ink-strong);
+    fill: grey;
+    color: black;
 }
 
 .section .section-header {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #999;
     margin-bottom: 20px;
 
 }
@@ -469,7 +417,7 @@ em {
 }
 
 .post-header .site-dish .title {
-    background-color: var(--surface);
+    background-color: #e8ebf5;
     padding: 10px;
     text-align: left;
     text-transform: capitalize !important;
@@ -494,12 +442,12 @@ em {
 }
 
 .post .draft-label {
-    color: var(--ink-strong);
+    color: black;
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
     margin-left: 6px;
-    background-color: var(--surface-soft);
+    background-color: #f9f2f4;
 }
 
 .post-header #TableOfContents ul {
@@ -530,7 +478,7 @@ em {
 }
 
 .post {
-    border-top: 2px solid var(--ink-strong);
+    border-top: 2px solid black;
     padding: 1rem 0rem;
 }
 
@@ -557,8 +505,8 @@ em {
     flex-direction: column;
     text-align: center;
     font-size: 1em;
-    color: var(--muted);
-    border-top: 1px solid var(--footer-border);
+    color: #999;
+    border-top: 1px solid #f4f4f4;
     margin-top: 40px;
     padding: 15px 0;
 }
@@ -571,7 +519,7 @@ em {
 }
 
 .footer a {
-    color: var(--muted);
+    color: #666;
 }
 
 .footer p {
@@ -700,42 +648,4 @@ em {
 
 * em {
     display: inline !important;
-}
-
-html.dark body {
-    background-color: var(--paper);
-    color: var(--ink);
-    background-blend-mode: soft-light;
-}
-
-html.dark a:hover {
-    color: var(--ink-strong) !important;
-}
-
-html.dark .highlight {
-    background-color: var(--code-bg);
-}
-
-.theme-toggle {
-    appearance: none;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    background: transparent;
-    color: var(--ink-strong);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    letter-spacing: .06em;
-    padding: 0 0 2px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
-    opacity: .65;
-    outline: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html, body { transition: none; }
 }
