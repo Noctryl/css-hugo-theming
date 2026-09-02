@@ -436,6 +436,17 @@ em {
   padding: 0;
 }
 
+.header nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul .theme-toggle-item {
+  display: inline-flex;
+  align-items: center;
+}
+
 .header nav li {
   display: inline-block;
   list-style: none;
