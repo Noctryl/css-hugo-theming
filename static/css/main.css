@@ -1,3 +1,58 @@
+:root {
+  color-scheme: light;
+  --paper: #f5f2e8;
+  --ink: #333;
+  --ink-strong: #111;
+  --muted: #777;
+  --border: #ccc;
+  --border-soft: #eee;
+  --surface: #fff;
+  --surface-alt: #e8ebf5;
+  --surface-soft: #f9f2f4;
+  --table-border: #dee2e6;
+  --table-head: #212529;
+  --table-head-border: #32383e;
+  --quote: #ffb7d6;
+  --selection-bg: #111;
+  --selection-fg: #fff;
+  --code-bg: #272822;
+  --footer-border: #f4f4f4;
+  --image-opacity: 1;
+}
+
+html.dark {
+  color-scheme: dark;
+  --paper: #1c1b18;
+  --ink: #ddd6c7;
+  --ink-strong: #f0eadc;
+  --muted: #a39d91;
+  --border: #5b574f;
+  --border-soft: #403d37;
+  --surface: #24231f;
+  --surface-alt: #292823;
+  --surface-soft: #302b2d;
+  --table-border: #514d45;
+  --table-head: #302e29;
+  --table-head-border: #5b574f;
+  --quote: #c79caf;
+  --selection-bg: #e8e0d1;
+  --selection-fg: #1c1b18;
+  --code-bg: #23221f;
+  --footer-border: #403d37;
+  --image-opacity: .88;
+}
+
+html {
+  background-color: var(--paper);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  transition: background-color .25s ease, color .25s ease;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&display=swap');
@@ -26,9 +81,9 @@ html {
 body {
   font-family: "EB Garamond", "Noto Sans Devnagari", "Chomsky", sans-serif !important;
   font-weight: 400;
-  color: #333;
+  color: var(--ink);
   font-size: 17px;
-  background: url(/background.png);
+  background-color: var(--paper);\n  background-image: url(/background.png);
   background-size: 70%;
   background-repeat: repeat;
   max-width: 950px;
@@ -37,7 +92,7 @@ body {
 }
 
 a {
-  color: black;
+  color: var(--ink-strong);
   text-decoration: none;
   word-break: break-word;
 }
@@ -63,26 +118,26 @@ button,
 input,
 select,
 textarea {
-  color: #333;
+  color: var(--ink);
 }
 
 ::-moz-selection {
   text-shadow: none;
-  color: #fff;
+  color: var(--selection-fg);
   text-decoration: underline;
 }
 
 ::selection {
-  background: black;
+  background: var(--selection-bg);
   text-shadow: none;
-  color: #fff;
+  color: var(--selection-fg);
 }
 
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border);
   margin: 1rem 0;
   padding: 0;
 }
@@ -119,13 +174,13 @@ table {
 
 table th,
 table td {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--table-border);
   padding: 0.75rem;
   vertical-align: top;
 }
 
 table thead th {
-  border-bottom: 2px solid #dee2e6;
+  border-bottom: 2px solid var(--table-border);
   vertical-align: bottom;
 }
 
@@ -138,9 +193,9 @@ table tbody tr:nth-of-type(even) {
 }
 
 table th {
-  background-color: #212529;
-  border-color: #32383e;
-  color: #fff;
+  background-color: var(--table-head);
+  border-color: var(--table-head-border);
+  color: var(--selection-fg);
 }
 
 textarea {
@@ -157,7 +212,7 @@ blockquote {
   font-style: italic;
   font-size: 1.2rem;
   border-left: 3px solid;
-  border-color: #FFB7D6;
+  border-color: var(--quote);
   padding-left: 20px;
 }
 
@@ -177,7 +232,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #333;
+  color: var(--ink);
   font-weight: 500;
   line-height: 1.3em;
   margin: 30px 0 20px 0;
@@ -275,7 +330,7 @@ li {
 }
 
 .thumbnail-img {
-  filter: grayscale(100%);
+  filter: grayscale(100%) opacity(var(--image-opacity));
 }
 
 .articles {
@@ -354,9 +409,9 @@ em {
 
 .site-description {
   -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);  
-  background: white;
+  background: var(--surface);
   border: 2px solid black;
-  color: black;
+  color: var(--ink-strong);
     clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
 }
 
@@ -369,7 +424,7 @@ em {
 }
 
 .header nav {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-soft);
   padding-top: 15px;
   display: flex;
   justify-content: center
@@ -408,13 +463,13 @@ em {
 }
 
 .header .site-description .scheme-toggle a.dark svg {
-  fill: #f8e04f;
-  color: #f8e04f;
+  fill: var(--ink-strong);
+  color: var(--ink-strong);
 }
 
 .header .site-description .scheme-toggle a.light svg {
-  fill: grey;
-  color: black;}
+  fill: var(--muted);
+  color: var(--ink-strong);}
 
 .section .section-header {
   font-size: 0.75rem;
@@ -496,12 +551,12 @@ em {
 }
 
 .post .draft-label {
-  color: black;
+  color: var(--ink-strong);
   text-decoration: none;
   padding: 2px 4px;
   border-radius: 4px;
   margin-left: 6px;
-  background-color: #f9f2f4;
+  background-color: var(--surface-soft);
 }
 
 .post-header #TableOfContents ul {
@@ -615,8 +670,8 @@ em {
   flex-direction: column;
   text-align: center;
   font-size: 1em;
-  color: #999;
-  border-top: 1px solid #f4f4f4;
+  color: var(--muted);
+  border-top: 1px solid var(--footer-border);
   margin-top: 40px;
   padding: 15px 0;
 }
@@ -629,7 +684,7 @@ em {
 }
 
 .footer a {
-  color: #666;
+  color: var(--muted);
 }
 
 .footer p {
@@ -790,4 +845,49 @@ em {
   font-family: "Chomsky", serif !important;
   font-weight: 400;
   font-style: normal;
+}
+
+
+html.dark body {
+  background-blend-mode: soft-light;
+}
+
+html.dark .site-description {
+  background: var(--surface);
+  color: var(--ink-strong);
+}
+
+html.dark .thumbnail-img,
+html.dark .post-cover {
+  filter: grayscale(100%) opacity(.88);
+}
+
+.theme-toggle-item {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.theme-toggle {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--ink-strong);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  padding: 0 0 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  opacity: .65;
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body { transition: none; }
 }
