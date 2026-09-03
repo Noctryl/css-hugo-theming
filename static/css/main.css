@@ -839,3 +839,171 @@ em {
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* Dark editorial paper refinement */
+/*
+  Keep the existing light theme untouched.
+  Dark mode is a warm editorial "paper at night", not a black UI:
+  - warm near-black canvas
+  - parchment typography
+  - restrained hairlines
+  - the existing paper texture remains visible
+  - no transition: theme switching is immediate
+*/
+
+[data-theme="dark"] {
+  --text-color: #e8e1d5;
+  --link-color: #f1eadf;
+  --heading-color: #f4ede3;
+
+  --bg-image: none;
+  --site-desc-bg: rgba(24, 22, 19, 0.68);
+  --site-desc-border: rgba(232, 225, 213, 0.20);
+
+  --border-color: rgba(232, 225, 213, 0.16);
+  --rule-color: rgba(232, 225, 213, 0.22);
+  --table-border: rgba(232, 225, 213, 0.15);
+  --table-th-bg: #171614;
+  --table-th-border: rgba(232, 225, 213, 0.18);
+
+  --selection-bg: #6b1d2a;
+  --selection-color: #f5f2ed;
+  --blockquote-border: #a8872a;
+  --draft-label-bg: rgba(232, 225, 213, 0.08);
+  --tag-border: rgba(232, 225, 213, 0.28);
+  --meta-color: #aaa399;
+  --footer-color: #8d877d;
+  --footer-link-color: #bcb4a8;
+}
+
+/* The original background.png is deliberately retained.
+   In dark mode it is inverted into a very subtle light-on-charcoal
+   paper grid instead of being covered by an opaque dark gradient. */
+[data-theme="dark"] body {
+  position: relative;
+  isolation: isolate;
+  background: #1c1a17;
+  color: var(--text-color);
+}
+
+[data-theme="dark"] body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: url("/background.png");
+  background-size: 70%;
+  background-repeat: repeat;
+
+  filter: invert(1) grayscale(1) contrast(0.82) brightness(0.72);
+  opacity: 0.20;
+}
+
+/* Let the paper texture breathe through the empty masthead rule. */
+[data-theme="dark"] .site-description {
+  background: rgba(28, 26, 23, 0.46);
+  border-color: rgba(232, 225, 213, 0.20);
+}
+
+/* Quiet editorial navigation: text only, no icon/button chrome. */
+.header nav {
+  position: relative;
+}
+
+.header nav > div:first-child {
+  width: 100%;
+}
+
+.header nav ul.flat {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.header nav ul.flat li {
+  margin: 0;
+}
+
+.header nav ul.flat #theme-toggle {
+  display: inline-block;
+  font-family: "EB Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+  padding: 3px 0;
+  border-bottom: 1px solid transparent;
+  transition: none;
+}
+
+.header nav ul.flat #theme-toggle:hover {
+  border-bottom-color: currentColor;
+}
+
+/* Pull the toggle out of the menu rhythm and place it at the top-right. */
+.header nav ul.flat li:has(#theme-toggle) {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+[data-theme="dark"] .header nav ul.flat #theme-toggle {
+  color: #c9a84c;
+}
+
+[data-theme="dark"] .header nav ul.flat #theme-toggle:hover {
+  color: #d7b967;
+}
+
+/* Dark editorial rules should read as ink on paper, never as black blocks. */
+[data-theme="dark"] hr,
+[data-theme="dark"] .header .site-description,
+[data-theme="dark"] .markdown,
+[data-theme="dark"] .post-header,
+[data-theme="dark"] .blog-matter,
+[data-theme="dark"] .meta,
+[data-theme="dark"] .footer {
+  border-color: var(--rule-color);
+}
+
+[data-theme="dark"] .header .site-description {
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+[data-theme="dark"] .footer {
+  color: var(--footer-color);
+}
+
+@media (max-width: 576px) {
+  .header nav ul.flat {
+    gap: 14px;
+    padding-right: 58px;
+    box-sizing: border-box;
+  }
+
+  .header nav ul.flat #theme-toggle {
+    font-size: 0.95rem;
+  }
+
+  .header nav ul.flat li:has(#theme-toggle) {
+    right: 0;
+  }
+
+  .header .site-title {
+    line-height: 1.05;
+  }
+
+  [data-theme="dark"] body::before {
+    background-size: 100%;
+    opacity: 0.18;
+  }
+}
