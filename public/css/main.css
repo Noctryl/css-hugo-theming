@@ -95,7 +95,7 @@ a:hover {
 }
 
 .my-avatar {
-  height: max-content; 
+  height: max-content;
   width: 300px;
   margin: auto;
   float: right;
@@ -401,7 +401,7 @@ em {
 }
 
 .site-description {
-  -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);  
+  -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
   background: var(--site-desc-bg);
   border: 2px solid var(--site-desc-border);
   color: var(--link-color);
@@ -602,10 +602,10 @@ em {
 .post .poem {
   box-sizing: border-box;
   padding: 10px 0px;
-} 
+}
 .post .poems em {
   text-align: left !important;
-} 
+}
 
 .featured .most-recent {
   display: flex;
