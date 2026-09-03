@@ -54,6 +54,14 @@ textarea {
     color: #fff;
 }
 
+/* Dark mode selection color; light mode keeps the existing black selection. */
+.dark ::selection,
+.dark ::-moz-selection,
+[data-theme="dark"] ::selection,
+[data-theme="dark"] ::-moz-selection {
+    background: #FF7E7E;
+}
+
 hr {
     display: block;
     height: 1px;
