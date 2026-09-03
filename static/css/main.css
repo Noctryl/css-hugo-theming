@@ -26,11 +26,11 @@ html {
   background-repeat: repeat;
 }
 
-[data-theme="dark"] html {
+html[data-theme="dark"] {
   background: #212121;
 }
 
-[data-theme="dark"] html::before {
+html[data-theme="dark"]::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -939,7 +939,7 @@ em {
     line-height: 1.05;
   }
 
-  [data-theme="dark"] html::before {
+  html[data-theme="dark"]::before {
     background-size: 100%;
     opacity: 0.18;
   }
