@@ -946,3 +946,16 @@ em {
     opacity: 0.72;
   }
 }
+
+
+/* Dark mode: make the post back/previous control visible on the dark canvas. */
+html[data-theme="dark"] .redirect-home,
+html[data-theme="dark"] .redirect-home svg,
+html[data-theme="dark"] .redirect-home svg *,
+html[data-theme="dark"] .home-button,
+html[data-theme="dark"] .home-button svg,
+html[data-theme="dark"] .home-button svg * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+}
