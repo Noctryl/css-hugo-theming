@@ -27,7 +27,7 @@ html {
 }
 
 html[data-theme="dark"] {
-  background: #212121;
+  background: #181818;
 }
 
 html[data-theme="dark"]::before {
@@ -39,9 +39,9 @@ html[data-theme="dark"]::before {
   background-image: url("/background.png");
   background-size: 70%;
   background-repeat: repeat;
-  filter: invert(1) grayscale(1) contrast(1.05) brightness(4);
+  filter: invert(1) grayscale(1) contrast(1.05) brightness(5);
   mix-blend-mode: screen;
-  opacity: 0.78;
+  opacity: 0.90;
 }
 
 
@@ -852,10 +852,10 @@ em {
   --heading-color: #f4ede3;
 
   --bg-image: none;
-  --site-desc-bg: rgba(33, 33, 33, 0.68);
+  --site-desc-bg: rgba(24, 24, 24, 0.68);
   --site-desc-border: rgba(232, 225, 213, 0.20);
 
-  background: #212121;
+  background: #181818;
   color: var(--text-color);
 
   --border-color: rgba(232, 225, 213, 0.16);
@@ -886,7 +886,7 @@ em {
 
 /* Let the paper texture breathe through the empty masthead rule. */
 [data-theme="dark"] .site-description {
-  background: rgba(33, 33, 33, 0.46);
+  background: rgba(24, 24, 24, 0.46);
   border-color: rgba(232, 225, 213, 0.20);
 }
 
@@ -943,7 +943,7 @@ em {
 
   html[data-theme="dark"]::before {
     background-size: 100%;
-    opacity: 0.72;
+    opacity: 0.85;
   }
 }
 
