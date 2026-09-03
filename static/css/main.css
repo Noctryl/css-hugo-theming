@@ -34,12 +34,13 @@ html[data-theme="dark"]::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background-image: url("/background.png");
   background-size: 70%;
   background-repeat: repeat;
-  filter: invert(1) grayscale(1) contrast(1.05) brightness(0.85);
+  filter: invert(1) grayscale(1) contrast(1.05) brightness(4);
+  mix-blend-mode: screen;
   opacity: 0.78;
 }
 
@@ -879,6 +880,7 @@ em {
 [data-theme="dark"] body {
   position: relative;
   isolation: isolate;
+  z-index: 1;
   background: transparent;
 }
 
