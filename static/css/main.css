@@ -39,8 +39,8 @@ html[data-theme="dark"]::before {
   background-image: url("/background.png");
   background-size: 70%;
   background-repeat: repeat;
-  filter: invert(1) grayscale(1) contrast(0.82) brightness(0.72);
-  opacity: 0.20;
+  filter: invert(1) grayscale(1) contrast(1.05) brightness(0.85);
+  opacity: 0.42;
 }
 
 
@@ -941,6 +941,6 @@ em {
 
   html[data-theme="dark"]::before {
     background-size: 100%;
-    opacity: 0.18;
+    opacity: 0.36;
   }
 }
