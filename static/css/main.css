@@ -948,7 +948,7 @@ em {
 }
 
 /* Pull the toggle out of the menu rhythm and place it at the top-right. */
-.header nav ul.flat li:has(#theme-toggle) {
+.header nav ul.flat li:last-child {
   position: absolute;
   right: 0;
   top: 50%;
@@ -994,7 +994,7 @@ em {
     font-size: 0.95rem;
   }
 
-  .header nav ul.flat li:has(#theme-toggle) {
+  .header nav ul.flat li:last-child {
     right: 0;
   }
 
