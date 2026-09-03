@@ -27,7 +27,7 @@ html {
 }
 
 [data-theme="dark"] html {
-  background: #24211e;
+  background: #212121;
 }
 
 [data-theme="dark"] html::before {
@@ -851,10 +851,10 @@ em {
   --heading-color: #f4ede3;
 
   --bg-image: none;
-  --site-desc-bg: rgba(36, 33, 30, 0.68);
+  --site-desc-bg: rgba(33, 33, 33, 0.68);
   --site-desc-border: rgba(232, 225, 213, 0.20);
 
-  background: #24211e;
+  background: #212121;
   color: var(--text-color);
 
   --border-color: rgba(232, 225, 213, 0.16);
@@ -884,7 +884,7 @@ em {
 
 /* Let the paper texture breathe through the empty masthead rule. */
 [data-theme="dark"] .site-description {
-  background: rgba(36, 33, 30, 0.46);
+  background: rgba(33, 33, 33, 0.46);
   border-color: rgba(232, 225, 213, 0.20);
 }
 
