@@ -399,7 +399,7 @@ em {
   background: var(--site-desc-bg);
   border: 2px solid var(--site-desc-border);
   color: var(--link-color);
-    clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+    clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
 }
 
 .header .site-description p {
@@ -864,7 +864,7 @@ em {
   --table-th-bg: #171614;
   --table-th-border: rgba(232, 225, 213, 0.18);
 
-  --selection-bg: #6b1d2a;
+  --selection-bg: #FF7E7E;
   --selection-color: #f5f2ed;
   --blockquote-border: #a8872a;
   --draft-label-bg: rgba(232, 225, 213, 0.08);
