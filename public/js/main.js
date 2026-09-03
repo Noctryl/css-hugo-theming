@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateToggleText() {
     var isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    toggle.textContent = isDark ? "LIGHT" : "DARK";
+    toggle.textContent = isDark ? "Light" : "Dark";
   }
 
   // Set initial text based on the HTML attribute set by the FOUC prevention script
