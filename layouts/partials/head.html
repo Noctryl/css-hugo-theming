@@ -1,0 +1,36 @@
+
+<div class="header">
+  <div>
+    <nav class="nav">
+      <div>
+        <ul class="flat">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+          <li>
+            <a href="#" id="theme-toggle">Dark</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="header-div">
+    {{ if .Site.Params.Avatar }}
+    <div class="avatar">
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.Avatar | safeURL }}" alt="{{ .Site.Title }}" />
+      </a>
+    </div>
+    {{ end }}
+    <div class="text-div">
+      <h1 class="site-title">{{ .Site.Title }}</h1>
+      <div class="site-description">
+        {{- if isset .Site.Params "subtitle" -}}
+        <p>{{ .Site.Params.Subtitle | markdownify }}</p>
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</div>
